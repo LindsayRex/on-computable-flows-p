@@ -1,0 +1,39 @@
+[headline]
+runs_certified = 352
+runs_refused = 48
+runs_degenerate_certified_at_start = 176
+degenerate_r0_zero_verified = 176
+count_checks_held = 352
+count_checks_total = 352
+count_ratio_min = 0.0008
+count_ratio_median = 0.3031
+count_ratio_max = 0.9517
+rate_checks_held = 352
+soundness_rows = 804
+dist_violations = 0
+dist_worst_slack = 0.962875
+logit_violations = 0
+logit_worst_slack = 0.106331
+attn_vs_bound_violations = 0
+attn_vs_bound_worst_slack = 0.000482
+attn_le_logit_violations = 0
+
+[lens_materiality]
+cells_total = 192
+eigenbasis_certifies = 176
+identity_also_certifies = 0
+h3_rejection_rows = 0
+
+[flip_m16]
+sigma_at_mu_0p0 = 0
+sigma_at_mu_0p001 = 0.001
+sigma_at_mu_0p01 = 0.01
+sigma_at_mu_0p1 = 0.1
+
+[baseline_logit_median]
+m16_kappa10 = { flow = 9.4793, svd = 9.0534, random = 41.2267 }
+m16_kappa100 = { flow = 6.8604, svd = 11.5503, random = 31.3770 }
+m64_kappa10 = { flow = 15.3434, svd = 5.5149, random = 79.0844 }
+m64_kappa100 = { flow = 12.7339, svd = 4.0007, random = 56.0855 }
+m128_kappa10 = { flow = 15.9662, svd = 5.5244, random = 79.6704 }
+m128_kappa100 = { flow = 12.9971, svd = 3.9974, random = 56.4429 }

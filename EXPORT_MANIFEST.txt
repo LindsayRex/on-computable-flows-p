@@ -1,5 +1,5 @@
-# Exported from On-Computable-Flows commit 81d40032a9ac2b896fbab07129b890bfc365dbe9
-# 82 files; sha256 of each, byte-identical to the source file at that
+# Exported from On-Computable-Flows commit 6a28c63fa99a5a2772b35c7db3ccebfe3d961438
+# 105 files; sha256 of each, byte-identical to the source file at that
 # commit. Paths whose source path differs are listed at the end (dest <- source).
 dcd192961826a4f38b12503de49e873a4aa3e0184859b0352fd45f55feb7b713  experiments/exp_007_deconvolution/analysis/fig1_traces.png
 1551969d15ec78380da2c8fc5105cdb16eff5671bb47690cc4b037f2fbcd993b  experiments/exp_007_deconvolution/analysis/fig2_cert_vs_meas.png
@@ -42,6 +42,29 @@ f3ab4801334cb62d14f6f4dae9fadb0c8968d7bfe4194d0f0217cfce21ef6e9c  experiments/ex
 799eb09c538f9971eee93900ddbf1f49c7faf474bd9f46a0a72b6eb878d53f8c  experiments/exp_008_lorenz_construction/src/run_calibration.py
 08db4b93413447cb821df31d767a6f4a6c64319c4aa53e27a0c8ba2cc8428b40  experiments/exp_008_lorenz_construction/src/run_lattice.py
 5fd475b1500050279a0e1eeb52ef1a14fe760f94880b2bfdd6aecdc6ff5014e0  experiments/exp_008_lorenz_construction/src/run_ramp.py
+30c533cfa4792ad08fe7ab52fdbdcdb3347b503e536a2c789f87140c7611cf91  experiments/exp_009_kv_compression/README.md
+46125d57ba9ebc81b61d08d2cad5ae890dd7839c0e1ea6636739b2e4898df861  experiments/exp_009_kv_compression/analysis/fig1_flip.png
+58d2ea829f5b15e9e29f97243b577c8ffee7b357f5ed13365486d6712429776c  experiments/exp_009_kv_compression/analysis/fig2_pipeline.png
+c9095cacb26cc1c6cbf80cd12ec870c0503a27bcdfd74e6bc0dcb017d0abef3c  experiments/exp_009_kv_compression/analysis/make_analysis.py
+c4d2c383392c0aa0fb1dc97e8cde55642c063b0c8bed408efeb8a14503887312  experiments/exp_009_kv_compression/analysis/stats.json
+fb9e4e664ba5e735d8d108b8476bf12b999456a7dc44e64eff24ba4041cd6f78  experiments/exp_009_kv_compression/experiment/exp_method.md
+c8142d1b50fa1f184adbba4281584a79b65cc42d964a3d33b6dc3d85d0e1da0f  experiments/exp_009_kv_compression/experiment/scorecard.md
+292c478a5caae54b04a3a5b848fcb27f7f79c43ad8c10759f90ca15e097223c8  experiments/exp_009_kv_compression/report/REPORT.md
+a42d9881d91f1f969925be251c430612f64ae3cca88d82d070b47362df2e3d37  experiments/exp_009_kv_compression/report/one_pager.md
+bacc7634717a7d608154578ca7fab30fd8247453d218a25aa7c02959b50a62c9  experiments/exp_009_kv_compression/results/baseline.jsonl
+40db8f4b1e2e8a30139f80813e6fb8e4c836a5ea824b8a99a835945fae834245  experiments/exp_009_kv_compression/results/calibration.toml
+485b79ec3302c0e3fc5344d09298ac4b2273fe65fa7004ac1126240e92ac6f51  experiments/exp_009_kv_compression/results/lens.jsonl
+2745bf91107c8c742943919f674f1a5b88501fbe84a9c378363f7679908510d6  experiments/exp_009_kv_compression/results/runs.jsonl
+eb905bd9972b20726965f039e2652f1f582e2583443c1a7666e251ca6b43fbe0  experiments/exp_009_kv_compression/results/soundness.jsonl
+b5a90950868800fa1932f2f48425199d4104d40590f45d1c93f191550a3a14bd  experiments/exp_009_kv_compression/results/summary.toml
+dff9ac8f5c251d6524d2c06b4c0c3a1b83c69e87a7eabfc04818a77a4e504eac  experiments/exp_009_kv_compression/runs/run_manifest.json
+680a43c99f90de566a6e5c3969689f7ba7ed30baff04a5d05b0a5d829af7e5d7  experiments/exp_009_kv_compression/src/exp009_lib.py
+13bf1e9984c61a19682783d637d69c0c2c922d1fcad7bb9c69277aa75d50c2fc  experiments/exp_009_kv_compression/src/make_summary.py
+646db5a39a5726f9ba3afe5a346299ae500bc8a9b9517da273d7183684913994  experiments/exp_009_kv_compression/src/run_baseline.py
+038079872098b965d4820d2be74670daf5da1099a7c7d134e865132d3a733411  experiments/exp_009_kv_compression/src/run_calibration.py
+ecd4922c4967eea4ae23c2aaad78e148a592052c265446da97dcd5e9e58135dc  experiments/exp_009_kv_compression/src/run_lens.py
+92574412628b3092fa91163a4520ef28ab87717849470db56b154eba917d7537  experiments/exp_009_kv_compression/src/run_main.py
+f923ed99f3ac2197b4e92f66bdb16c0b4666069e9d8a94394678d279f67734e5  experiments/exp_009_kv_compression/src/run_resume.py
 9d5d6f94ed44f6c37208ea8f928aef54584a89fbc424d80bf7222c0c5ab48f70  experiments/rule110_flow/NOTES.md
 eb0a333c6066faff64100ce524ea4f13659b58c2c7ec0c521332c1e39ef946d5  experiments/rule110_flow/rule110_flow.py
 ec3ba999d8dbf200c77dfc4d766e88fee2edc449b76e96fd38421d716dad76f7  experiments/rule110_flow/summary.toml
@@ -124,6 +147,29 @@ dbd63c981e389aae5240073650b182a3a4a93782e6e018f20429a14adc6d126a  uv.lock
 # experiments/exp_008_lorenz_construction/src/run_calibration.py <- v3/exp_008_lorenz_construction/src/run_calibration.py
 # experiments/exp_008_lorenz_construction/src/run_lattice.py <- v3/exp_008_lorenz_construction/src/run_lattice.py
 # experiments/exp_008_lorenz_construction/src/run_ramp.py <- v3/exp_008_lorenz_construction/src/run_ramp.py
+# experiments/exp_009_kv_compression/README.md <- v3/exp_009_kv_compression/README.md
+# experiments/exp_009_kv_compression/analysis/fig1_flip.png <- v3/exp_009_kv_compression/analysis/fig1_flip.png
+# experiments/exp_009_kv_compression/analysis/fig2_pipeline.png <- v3/exp_009_kv_compression/analysis/fig2_pipeline.png
+# experiments/exp_009_kv_compression/analysis/make_analysis.py <- v3/exp_009_kv_compression/analysis/make_analysis.py
+# experiments/exp_009_kv_compression/analysis/stats.json <- v3/exp_009_kv_compression/analysis/stats.json
+# experiments/exp_009_kv_compression/experiment/exp_method.md <- v3/exp_009_kv_compression/experiment/exp_method.md
+# experiments/exp_009_kv_compression/experiment/scorecard.md <- v3/exp_009_kv_compression/experiment/scorecard.md
+# experiments/exp_009_kv_compression/report/REPORT.md <- v3/exp_009_kv_compression/report/REPORT.md
+# experiments/exp_009_kv_compression/report/one_pager.md <- v3/exp_009_kv_compression/report/one_pager.md
+# experiments/exp_009_kv_compression/results/baseline.jsonl <- v3/exp_009_kv_compression/results/baseline.jsonl
+# experiments/exp_009_kv_compression/results/calibration.toml <- v3/exp_009_kv_compression/results/calibration.toml
+# experiments/exp_009_kv_compression/results/lens.jsonl <- v3/exp_009_kv_compression/results/lens.jsonl
+# experiments/exp_009_kv_compression/results/runs.jsonl <- v3/exp_009_kv_compression/results/runs.jsonl
+# experiments/exp_009_kv_compression/results/soundness.jsonl <- v3/exp_009_kv_compression/results/soundness.jsonl
+# experiments/exp_009_kv_compression/results/summary.toml <- v3/exp_009_kv_compression/results/summary.toml
+# experiments/exp_009_kv_compression/runs/run_manifest.json <- v3/exp_009_kv_compression/runs/run_manifest.json
+# experiments/exp_009_kv_compression/src/exp009_lib.py <- v3/exp_009_kv_compression/src/exp009_lib.py
+# experiments/exp_009_kv_compression/src/make_summary.py <- v3/exp_009_kv_compression/src/make_summary.py
+# experiments/exp_009_kv_compression/src/run_baseline.py <- v3/exp_009_kv_compression/src/run_baseline.py
+# experiments/exp_009_kv_compression/src/run_calibration.py <- v3/exp_009_kv_compression/src/run_calibration.py
+# experiments/exp_009_kv_compression/src/run_lens.py <- v3/exp_009_kv_compression/src/run_lens.py
+# experiments/exp_009_kv_compression/src/run_main.py <- v3/exp_009_kv_compression/src/run_main.py
+# experiments/exp_009_kv_compression/src/run_resume.py <- v3/exp_009_kv_compression/src/run_resume.py
 # figures/make_cert_vs_meas.py <- v5/figures/make_cert_vs_meas.py
 # figures/make_lorenz_ramp.py <- v5/figures/make_lorenz_ramp.py
 # pyproject.toml <- v3/pyproject.toml

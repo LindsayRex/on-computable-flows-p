@@ -1,0 +1,5 @@
+[gates]
+CAL1 = { pass = true, detail = "rel err 9.49e-11 (<=1e-10), measured 1041 <= certified 1295" }
+CAL2 = { pass = true, detail = "isotropy 4.3e-15, closed-form rel err 2.30e-15 (<=1e-8), subgrad res 1.56e-14" }
+CAL3 = { pass = true, detail = "refusal sigma=0 (kerdim 48), wrong-certificate bound 2.16e-05 < measured distance 104.6469: watched violated" }
+CAL4 = { pass = true, detail = "worst measured ratio above the floor 0.979113532710 <= certified rate 0.980198019802 + 1e-12" }

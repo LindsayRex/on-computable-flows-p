@@ -1,0 +1,7 @@
+{
+ "soundness_rows": 804,
+ "attn_slack_max": 0.0004815163978022017,
+ "attn_slack_median": 4.304111262099108e-05,
+ "dist_slack_max": 0.9628751990156644,
+ "violations": 0
+}

@@ -1,0 +1,11 @@
+{
+ "python": "3.11.15",
+ "platform": "Linux-6.8.0-124-generic-x86_64-with-glibc2.39",
+ "machine": "x86_64",
+ "packages": {
+  "numpy": "2.4.6",
+  "scipy": "1.17.1",
+  "matplotlib": "3.11.1"
+ },
+ "note": "exp_009 main sweep environment; brief frozen at commit d4201ca, amendment 1 at ae96069"
+}
