@@ -14,12 +14,12 @@ copy of a committed file there (see Provenance below).
 | Path | Contents |
 | --- | --- |
 | `lean_verification/` | Lean 4 + Mathlib formalisation of the paper's novel results. `MAP.md` maps each paper result to its Lean declarations and states exactly what each file does and does not formalise. |
-| `v3/exp_007_deconvolution/` | The deblurring experiment: frozen method brief, source, results, run manifest. Source of the certified-versus-measured numbers in the worked-examples section. |
-| `v3/exp_008_lorenz_construction/` | The constructed-chaos experiment (Lorenz family and coupled lattice): frozen brief with registered amendments, source, results, run manifest. Source of the dynamic-null and synchronisation-threshold numbers. |
+| `experiments/exp_007_deconvolution/` | The deblurring experiment: frozen method brief, source, results, run manifest. Source of the certified-versus-measured numbers in the worked-examples section. |
+| `experiments/exp_008_lorenz_construction/` | The constructed-chaos experiment (Lorenz family and coupled lattice): frozen brief with registered amendments, source, results, run manifest. Source of the dynamic-null and synchronisation-threshold numbers. |
 | `experiments/rule110_flow/` | The Rule 110 construction: code, claims ledger, summary. Source of the computability section's table. |
-| `v5/figures/` | Witness scripts. Each renders a paper figure from the committed result files only and prints every number the paper cites from it. |
-| `v3/pyproject.toml`, `v3/uv.lock` | The pinned Python environment the experiments ran under. |
-| `EXPORT_MANIFEST.txt` | Source commit and sha256 of every file here. |
+| `figures/` | Witness scripts. Each renders a paper figure from the committed result files only and prints every number the paper cites from it. |
+| `pyproject.toml`, `uv.lock` | The pinned Python environment the experiments ran under. |
+| `EXPORT_MANIFEST.txt` | Source commit, sha256 of every file, and the path mapping to the research repository. |
 
 ## Checking the Lean
 
@@ -48,22 +48,23 @@ reads; `runs/run_manifest.json` records the resolved environment of the actual
 runs. The environment is recreated from the lock file:
 
 ```sh
-cd v3 && uv sync
-uv run python exp_008_lorenz_construction/src/run_calibration.py   # for example
+uv sync
+uv run python experiments/exp_008_lorenz_construction/src/run_calibration.py   # for example
 ```
 
 The witness scripts need only the committed result files:
 
 ```sh
-uv run python ../v5/figures/make_lorenz_ramp.py
+uv run python figures/make_lorenz_ramp.py
 ```
 
 ## Provenance
 
 `EXPORT_MANIFEST.txt` names the source commit of the private research repository
 and the sha256 of every file. Files are exported allowlist-only by a script that
-copies committed files unmodified, so each hash here equals the hash of the same
-path at that commit. Nothing in this repository is edited after export.
+copies committed files unmodified, so each hash here equals the hash of the
+source file at that commit; the manifest also records where paths were remapped
+into this repository's flat layout. Nothing here is edited after export.
 
 ## License
 

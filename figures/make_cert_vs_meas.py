@@ -21,8 +21,11 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-ROOT = pathlib.Path(__file__).resolve().parents[2]
-RUNS = ROOT / "v3/exp_007_deconvolution/results/direct_count.jsonl"
+# Research-repo layout first, then the public artifact repo's flat layout.
+_here = pathlib.Path(__file__).resolve()
+RUNS = next(p for p in (_here.parents[2] / "v3/exp_007_deconvolution/results/direct_count.jsonl",
+                        _here.parents[1] / "experiments/exp_007_deconvolution/results/direct_count.jsonl")
+            if p.is_file())
 OUT = pathlib.Path(__file__).resolve().parent / "cert_vs_meas.pdf"
 
 rows = [json.loads(line) for line in RUNS.open()]

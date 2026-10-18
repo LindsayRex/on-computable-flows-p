@@ -24,13 +24,13 @@ jobs:
         with:
           python-version: "3.11"
       - name: sync pinned environment
-        run: uv sync --directory v3
+        run: uv sync
       - name: render figures from committed artifacts
         run: |
-          uv run --directory v3 python ../v5/figures/make_lorenz_ramp.py
-          uv run --directory v3 python ../v5/figures/make_cert_vs_meas.py
-          test -f v5/figures/lorenz_ramp.pdf
-          test -f v5/figures/cert_vs_meas.pdf
+          uv run python figures/make_lorenz_ramp.py
+          uv run python figures/make_cert_vs_meas.py
+          test -f figures/lorenz_ramp.pdf
+          test -f figures/cert_vs_meas.pdf
 
   export-integrity:
     name: manifest hashes match the files

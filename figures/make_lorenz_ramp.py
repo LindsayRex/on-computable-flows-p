@@ -15,7 +15,10 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
 HERE = pathlib.Path(__file__).resolve().parent
-RES = HERE.parent.parent / "v3/exp_008_lorenz_construction/results"
+# Research-repo layout first, then the public artifact repo's flat layout.
+RES = next(p for p in (HERE.parent.parent / "v3/exp_008_lorenz_construction/results",
+                       HERE.parent / "experiments/exp_008_lorenz_construction/results")
+           if p.is_dir())
 
 
 def load(name):
