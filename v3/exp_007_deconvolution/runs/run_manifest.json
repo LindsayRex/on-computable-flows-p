@@ -1,0 +1,35 @@
+{
+  "experiment": "exp_007_deconvolution",
+  "frozen_brief": "experiment/exp_method.md, frozen 2026-10-10 before the run",
+  "frozen_brief_sha256": "893b440a298350b4ab38066e67596c01d80753400f333771ea404a75346cdea9",
+  "git_commit": "1af25ce9be59b4b394769a4e89977733b10ce87b (working tree; exp_007 files uncommitted at run time - noted per M7)",
+  "run_date": "2026-10-10",
+  "environment": {
+    "inherits": "v3/pyproject.toml + v3/uv.lock (v3/.venv)",
+    "python_version": "3.11.15",
+    "packages": {"numpy": "2.4.6", "scipy": "1.17.1", "PyWavelets": "1.8.0", "matplotlib": "3.11.1"},
+    "sagemath_version": "not used (no symbolic work)",
+    "hardware": "12th Gen Intel Core i7-12700K, CPU only, float64; BLAS/OpenMP threads capped at 4",
+    "wall_clock": "full --run took 44.9 s"
+  },
+  "seeds": {"noise": "numpy default_rng(seed), seed 0-7", "calibration": "default_rng(42)",
+            "arm_A_invariance_probe": "default_rng(1000+seed)", "other": "deterministic (signal, operators, declarations)"},
+  "tolerances": "frozen in brief sections 1 and 6 (eps_rel 1e-6; Gram 1e-10; validity -1e-12; orthonormality 1e-12; slope +-0.05)",
+  "parameters": {"d_main": 256, "tau": 0.01, "s": [1, 2, 4], "w2": [0.01, 0.1, 1, 10],
+                 "lam_armB": [0.001, 0.01, 0.1], "lam_armC": 0.01, "d_scale": [256, 512, 1024],
+                 "wavelet": "db4 periodization level 5 (d=256)", "cap": 300000, "ref_tol": 1e-12},
+  "reproduce": [
+    "cd v3 && uv sync",
+    "uv run python exp_007_deconvolution/src/harness.py --calibrate",
+    "uv run python exp_007_deconvolution/src/harness.py --run",
+    "uv run python exp_007_deconvolution/analysis/make_analysis.py"
+  ],
+  "artifacts_emitted": {
+    "results": ["results/calibration.json", "results/declarations.jsonl", "results/runs.jsonl",
+                "results/arm_b_secant.jsonl", "results/summary.toml"],
+    "certificate_traces": ["results/traces.npz"],
+    "figures": ["analysis/fig1_traces.png", "analysis/fig2_cert_vs_meas.png", "analysis/fig3_armB_secant.png"],
+    "stats": ["analysis/stats.json"]
+  },
+  "note": "summary.toml is written by analysis/make_analysis.py from the raw results/*.jsonl"
+}

@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+v3/.venv/
+lean_verification/.lake/
+v5/figures/*.pdf
+v5/figures/*.png

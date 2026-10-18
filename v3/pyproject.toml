@@ -1,0 +1,43 @@
+# On Computable Flows v3 — experiment software environment
+#
+# One environment for every exp_NNN under v3/, managed with uv:
+#   cd v3 && uv sync            # create/update .venv from this file
+#   uv run python …             # run inside it
+#   uv run sage …               # only if the sage decision (below) adds it
+#
+# The per-experiment run_manifest.json records the RESOLVED versions
+# (uv.lock + `uv pip list`) — this file declares intent, the manifest
+# records fact (M7).
+#
+# SAGEMATH (resolved 2026-07-23): SageMath 10.6 is installed on this box in
+# a miniforge env — built by the riemann repo's environment.yml:
+#     /mnt/data/sage_server/miniforge3/envs/sage/bin/sage
+# It is not on PATH; harnesses that need Sage call that binary explicitly
+# and the run_manifest records its version. This uv environment is separate
+# and carries the numeric/analysis stack (numpy/scipy/pywt/matplotlib) plus
+# sympy for light symbolics; .sage scripts run under the Sage env, analysis
+# runs under this one. Neither touches the system python.
+
+[project]
+name = "ocf-v3-experiments"
+version = "3.0.0"
+description = "Experiment harnesses and analysis for On Computable Flows v3 (E1-E4 and successors)"
+requires-python = ">=3.11"
+dependencies = [
+    "numpy>=2.0",
+    "scipy>=1.14",
+    "sympy>=1.13",        # symbolic layer (standing in for Sage until ruled)
+    "PyWavelets>=1.8",    # the lens
+    "matplotlib>=3.9",    # figures (analysis law: *.png, embedded in reports)
+    "pylance>=9.0.0",
+    "polars>=1.43.0",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",        # harness self-tests (calibration cases as tests)
+]
+
+[tool.uv]
+# Experiments must not silently float: upgrade only on purpose.
+# uv.lock is committed; run_manifest.json snapshots the resolved set.

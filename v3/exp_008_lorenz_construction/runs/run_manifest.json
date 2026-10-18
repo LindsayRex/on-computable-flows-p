@@ -1,0 +1,49 @@
+{
+  "experiment": "exp_008_lorenz_construction",
+  "frozen_brief_sha": "8803869c23172c2f39fed5ce90fe05f3d5c678f4 (brief + amendments 1 and 2 all committed before their readings; see git history of experiment/exp_method.md)",
+  "git_commit": "8803869c23172c2f39fed5ce90fe05f3d5c678f4",
+  "environment": {
+    "sagemath_version": "not used (nothing symbolic)",
+    "python_version": "3.11.15 (v3/.venv, pyproject-pinned)",
+    "packages": { "numpy": "2.4.6", "scipy": "1.17.1", "matplotlib": "3.11.1" },
+    "hardware": "linux x86_64, single node, no GPU"
+  },
+  "seeds": {
+    "lyapunov_initial_conditions": [0, 1, 2, 3, 4, 5, 6, 7],
+    "soundness_pairs": "default_rng(0) per passing row",
+    "lattice_cells": [0, 1, 2, 3, 4, 5, 6, 7],
+    "lattice_bisection": [0],
+    "note": "grids, lens optimiser and bisection are seedless (deterministic)"
+  },
+  "tolerances": {
+    "note": "mirror of brief section 6, declared before the run",
+    "lambda1_ruler": "0.906 +- 0.03 at r=28",
+    "sync": "1e-6 running max over t in [50,200]",
+    "bisection": "1e-2 absolute in c",
+    "pass_refuse": "sign of grid sup, no epsilon; refinement 81^3 must not flip"
+  },
+  "parameters": {
+    "sigma": 10.0, "b": "8/3",
+    "r_sweep_frozen": "0.5..30.5 step 0.5 (61)",
+    "r_sweep_fine_local": "0.05..1.25 step 0.05 (25, amendment 2)",
+    "local_boxes_rho": [0.1, 0.3, 0.5],
+    "lattice": { "N": 8, "topology": "ring", "r": 28.0, "lambda2": 0.5857864376269049 },
+    "integrators": "RK4 h=1e-3 (Benettin, pairs); Strang splitting with exact Laplacian exponential (lattice); RK45 not needed in the end (fixed-step throughout, stated)"
+  },
+  "reproduce": [
+    "v3/.venv/bin/python src/run_calibration.py",
+    "v3/.venv/bin/python src/run_ramp.py",
+    "v3/.venv/bin/python src/run_lattice.py",
+    "v3/.venv/bin/python src/make_summary.py",
+    "v3/.venv/bin/python analysis/make_analysis.py"
+  ],
+  "artifacts_emitted": {
+    "results": ["results/calibration.toml", "results/ramp.jsonl", "results/lambda1.jsonl",
+                "results/soundness.jsonl", "results/lattice.jsonl", "results/summary.toml"],
+    "certificate_traces": ["results/soundness.jsonl (per-pair worst ratio vs e^{-st} bound)"],
+    "figures": ["analysis/fig1_ramp.pdf", "analysis/fig2_lattice.pdf"]
+  },
+  "instrument_fixes_logged": [
+    "lattice Benettin window bug caught from its own first output (printed 4/3 of truth: transient growth leaked into the measurement window); fixed, rerun; first output kept in git history"
+  ]
+}

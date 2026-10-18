@@ -1,0 +1,21 @@
+[totals]
+rows_in_scope = 406
+C1_failures = 0
+C2_failures = 0
+
+[headline_s2_w0p1_smooth_direct]
+beta_hat = 1.4
+k_direct_band = 1659
+k_direct_canonical = 321091
+
+[slack_direct_over_measured.band]
+n = 203
+min = 4.867
+median = 29.687
+max = 106.339
+
+[slack_direct_over_measured.canonical]
+n = 203
+min = 165.253
+median = 1849.532
+max = 62650.146

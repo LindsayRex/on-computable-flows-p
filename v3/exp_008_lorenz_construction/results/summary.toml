@@ -1,0 +1,40 @@
+[part_a]
+global_trap_classical = { n_pass = 0 }
+global_trap_identity = { n_pass = 0 }
+global_trap_optimised = { n_pass = 0 }
+local_rho0_1_classical = { n_pass = 18, r_first = 0.05, r_flip = 0.85 }
+local_rho0_1_identity = { n_pass = 0 }
+local_rho0_1_optimised = { n_pass = 18, r_first = 0.05, r_flip = 0.85 }
+local_rho0_3_classical = { n_pass = 14, r_first = 0.05, r_flip = 0.65 }
+local_rho0_3_identity = { n_pass = 0 }
+local_rho0_3_optimised = { n_pass = 14, r_first = 0.05, r_flip = 0.65 }
+local_rho0_5_classical = { n_pass = 9, r_first = 0.05, r_flip = 0.45 }
+local_rho0_5_identity = { n_pass = 0 }
+local_rho0_5_optimised = { n_pass = 9, r_first = 0.05, r_flip = 0.45 }
+refinement_flips = 0
+rows_total = 957
+passes_at_r_gt_1 = 0
+lambda1_first_positive_r = 22.5
+lambda1_at_28 = 0.9055
+
+[part_a_soundness]
+checks = 82
+violations = 0
+worst_ratio_vs_bound = 0.9997
+
+[part_b]
+sup_mu_r28 = 16.8326
+lambda2 = 0.585786
+c_star = 28.7350
+c_sync_seed0 = 2.1186
+ratio_cstar_over_csync = 13.6
+grid_c_0p25 = { synced_all = true, sync_err_max = 6.441e-11 }
+grid_c_0p5 = { synced_all = true, sync_err_max = 1.548e-12 }
+grid_c_1p0 = { synced_all = true, sync_err_max = 9.477e-13 }
+grid_c_1p1 = { synced_all = true, sync_err_max = 8.651e-13 }
+grid_c_1p2 = { synced_all = true, sync_err_max = 9.958e-13, lambda1_sync_mean = 0.9051 }
+grid_c_2p0 = { synced_all = true, sync_err_max = 4.714e-13 }
+grid_c_4p0 = { synced_all = true, sync_err_max = 2.904e-13 }
+grid_c_8p0 = { synced_all = true, sync_err_max = 1.900e-13 }
+grid_c_16p0 = { synced_all = true, sync_err_max = 9.645e-14 }
+sync_failures_at_c_ge_1p1_cstar = 0

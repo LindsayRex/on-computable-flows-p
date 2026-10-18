@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: >-
+  If you use these artifacts, cite them as below. For the paper's text, cite
+  the Zenodo record of the manuscript (DOI to be added on publication).
+title: "On Computable Flows: public artifacts (Lean formalisation and experiment code)"
+type: software
+authors:
+  - family-names: Rex
+    given-names: Lindsay
+license: Apache-2.0
+repository-code: https://github.com/rexl1/on-computable-flows-public
+abstract: >-
+  Lean 4 formalisation of the novel results of the paper "On Computable Flows",
+  together with the experiment code and frozen run artifacts that every number
+  printed in the paper derives from.

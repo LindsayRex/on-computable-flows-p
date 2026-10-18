@@ -1,0 +1,8 @@
+[calibration]
+CAL1_closed_form = { pass = true, detail = "mu(diag(-1,-5)) = -1.000000000000 (want -1 exactly); mu(diag(+1,-5)) = 1.000000000000 must refuse (>0)" }
+CAL2_classical_pass_r0p5 = { pass = false, detail = "grid sup mu = 21.764160, exact vertex sup = 21.764160 over trap box [-4.07,4.07]x[-12.86,12.86]x[-2.62,13.12]; brief demanded s>0 here" }
+CAL3_lyapunov_ruler = { pass = true, detail = "lambda1(r=28) mean over 8 seeds = 0.9096 (min 0.9017, max 0.9241; want 0.906 +- 0.03); harmonic oscillator lambda1 = 1.22e-15 (want |.| < 1e-3)" }
+CAL4_divergence_watched_failing = { pass = true, detail = "trace J = -13.6667 < 0 at ALL r (divergence test endorses the field) while measured lambda1(r=28) = 0.9096 > 0: wrong instrument, watched" }
+
+all_gates_pass = false
+failed = ["CAL2_classical_pass_r0p5"]

@@ -1,0 +1,26 @@
+# Rule 110 flow battery artifact (deterministic; seed 110 where random)
+elapsed_seconds = 0.43
+rule = 110
+
+truth_table_polynomial = "exact on all 8 neighbourhoods"
+exhaustive_rows = 8190
+exhaustive_result = "flow == reference for every row, lengths 1..12"
+[trajectory_alpha_1.0]
+n = 256
+steps = 512
+agrees_with_reference = true
+max_iters_per_step = 1
+
+[trajectory_alpha_0.4]
+n = 256
+steps = 512
+agrees_with_reference = true
+max_iters_per_step = 8
+
+[certificate_audit]
+start_residual = 9.6954
+predicted_count = 8
+observed_count = 8
+rate_q = 0.6
+eps = 0.25
+

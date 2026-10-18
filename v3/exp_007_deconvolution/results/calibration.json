@@ -1,0 +1,32 @@
+{
+  "gates": {
+    "CAL-1_flat_spectrum_exact": {
+      "delta_w": 0.2541604512854543,
+      "lam_min": 0.2541604512854538,
+      "fourier_gram_vs_min_maxerr": 1.2490009027033011e-15,
+      "pass": true
+    },
+    "CAL-2_overlap_refused": {
+      "delta_w": -4.5102810375396984e-17,
+      "pass": true
+    },
+    "CAL-3_validity_checker": {
+      "pass": true
+    },
+    "CAL-4_count_distance_and_HDelta": {
+      "k_meas": 1194,
+      "k_cert": 1902,
+      "dist_ok": true,
+      "HDelta_witness_violates": true,
+      "pass": true
+    },
+    "CAL-5_operators": {
+      "wavelet_level": 5,
+      "orth_maxerr": 2.220446049250313e-16,
+      "grad_relerr_K": 3.196150884159234e-16,
+      "grad_relerr_D": 2.874572372137601e-16,
+      "pass": true
+    }
+  },
+  "passed": true
+}
