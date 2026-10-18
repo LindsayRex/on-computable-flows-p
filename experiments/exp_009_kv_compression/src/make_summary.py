@@ -42,6 +42,12 @@ L.append(f"count_checks_total = {len(cert)}")
 L.append(f"count_ratio_min = {min(ratios):.4f}")
 L.append(f"count_ratio_median = {st.median(ratios):.4f}")
 L.append(f"count_ratio_max = {max(ratios):.4f}")
+# the single run with the smallest measured/certified ratio (the worst-conditioned
+# cell), added 2026-10-18 so the manuscript's worst-cell pair cites this file
+# rather than a session-computed number
+wc = min(cert, key=lambda r: r["k_meas"] / r["k_cert"])
+L.append(f"count_worst_cell_k_cert = {wc['k_cert']}")
+L.append(f"count_worst_cell_k_meas = {wc['k_meas']}")
 L.append(f"rate_checks_held = {len(rate_ok)}")
 L.append(f"soundness_rows = {len(snd)}")
 for fam, (okk, slk) in families.items():
