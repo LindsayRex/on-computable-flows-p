@@ -8,7 +8,7 @@ authors:
   - family-names: Rex
     given-names: Lindsay
 license: Apache-2.0
-repository-code: https://github.com/rexl1/on-computable-flows-public
+repository-code: https://github.com/LindsayRex/on-computable-flows
 abstract: >-
   Lean 4 formalisation of the novel results of the paper "On Computable Flows",
   together with the experiment code and frozen run artifacts that every number
