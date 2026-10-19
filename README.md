@@ -66,6 +66,22 @@ copies committed files unmodified, so each hash here equals the hash of the
 source file at that commit; the manifest also records where paths were remapped
 into this repository's flat layout. Nothing here is edited after export.
 
+## Use of artificial intelligence
+
+This work was written with substantial assistance from artificial-intelligence
+(AI) systems, used over three years and drawn from several providers, with no
+one provider's systems predominating. The AI systems assisted with drafting and
+revising the manuscript, developing and attacking proofs, writing the Lean
+formalisation, checking citations against the cited pages, and running and
+auditing the experiments. The project's verification practices are designed so
+that no claim rests on an AI system's assertion: the paper's novel results are
+machine-checked in Lean (`lean_verification/MAP.md` states the boundary result
+by result, including what remains prose-only), every classical citation was
+verified against the cited page of the source, and every number printed in the
+paper traces to a frozen run artifact in this repository. The manuscript
+carries the same declaration before its references. Lindsay Rex directed the
+work, reviewed every statement, and takes full responsibility for the content.
+
 ## License
 
 Apache License 2.0 (see `LICENSE`), matching Mathlib's license for the Lean code.
