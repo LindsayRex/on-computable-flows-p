@@ -3,7 +3,7 @@
 > **FROZEN before the computation, 2026-10-18.** Author approval: this session
 > ("But option two, man. Just do it. Run it. We're here to get us right."), logged in
 > research_log/LOG.md. Trigger: external reviewer A item A5.5 (triage M6,
-> project_plan/doing/REVIEW_TRIAGE_2026-10-18.md). The original brief and all existing
+> project_plan/done/v6_campaign/REVIEW_TRIAGE_2026-10-18.md). The original brief and all existing
 > results files are untouched; this addendum adds a tighter certified-count formula over
 > the SAME raw runs and re-runs the soundness checks against it. No new dynamics is run:
 > the certificate is a pre-run formula of declared numbers, and the measured counts it is

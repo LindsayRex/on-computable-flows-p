@@ -306,5 +306,53 @@
   "scope_not_formalised": [
    "NOT FORMALISED (and why): * R2 typing and the scope prose, R12(i) typing, Remark R12.3 and R13: prose-only by instruction (R12.3 follows from `R11_f` by the proof of `joint_readout_quarter`; not stated here). * R3 as a cited theorem: classical (forward-backward on a strongly convex smooth sum). * R8(d) strong convexity and Gamma_0 membership of the stage and summed energies. * R8(e), lower curvature half for general w (sigma-hat = 4 w1 w2 w3/(tr)^2): only the upper half (`Hw_upper`) and the unit-weight pair are proved. * Identification of lambda_min(H) and lambda_max(H) with the individual roots r1, r3: proved only that the Rayleigh infimum and supremum lie in the same brackets as r1, r3 (`lambda_brackets`), which is what the declared pair needs. * R12(iii) (contraction, count, start bound 21): prose; the count facts used are R6. * R7(ii),(iii) summed counts: immediate from R6, not stated separately."
   ]
+ },
+ {
+  "unit": "R0",
+  "result": "Limits of stacking certified words (adjudicated shape, 2026-10-29): the heavy-ball Lyapunov function has a globally Lipschitz gradient only for quadratic energies (r0-lyap-typing); its state-level inequality survives no proximal lift that moves the fixed point (r0-fixed-point) and fails for the Euclidean position-block lift on an exact rational instance (r0-transfer-instance); no pair norm from (m, L, alpha) alone (r0-jsr, r0-pairnorm, instances); exact floors of the two Langevin orders differ except at one crossing (r0-order); product bound, invariant law, letter factors cited as classical; repaired interface IF-1 to IF-11 for the mixing rules. Withdrawn: closure theorem, terminality of the floor, R-ANY",
+  "tier": "FORMALISED for prop:r0-transfer-instance(b), the algebra of prop:r0-order (Gaussian W2 formula as hypothesis) and prop:r0-lyap-typing(a) at d = 1; PROSE-ONLY with executable witness for the rest",
+  "lean_files": [
+   "OcfVerification/R0StackingLimits.lean"
+  ],
+  "dossier_sha16": "c3ba699c9e9e404c",
+  "scope_not_formalised": [
+   "none listed in the file header"
+  ]
+ },
+ {
+  "unit": "R-SP",
+  "result": "Law-level certificate for the proximal Langevin word: order-free W2 factor (1-mh)/(1+h sigma_g); own invariant law with a computable start bound; Moreau-Yosida Gibbs target as an instance of thm:stochastic-word; exact Gibbs target of (F+g)/T conditional on an undeclared Lipschitz datum, refused otherwise; step boundary and order counterexamples; restriction at g = 0; frames",
+  "tier": "FORMALISED partial (7 exact-arithmetic items a-g; law-level statements prose-only, witness 25 s ALL CHECKS PASS AND ALL MUTATIONS KILLED)",
+  "lean_files": [
+   "OcfVerification/RSPProximalLangevin.lean"
+  ],
+  "dossier_sha16": "e612caec7929b3ce",
+  "scope_not_formalised": [
+   "none listed in the file header"
+  ]
+ },
+ {
+  "unit": "R-CP",
+  "result": "Certificates for the accelerated proximal word (FISTA word with free momentum): convex value rate (Beck-Teboulle / Attouch-Peypouquet cores), strongly convex accelerated rate by curvature reallocation (core needs re-sourcing from the flagged Beck 2017 copy), restriction at momentum zero, two boundary counterexamples; heavy ball plus prox linear rate refused (exact all-states violation 2684971/1929216), iPiano descent and residual as recursion-level statements",
+  "tier": "FORMALISED partial (free-momentum word, reallocation, exact instances, step boundary, comparison threshold, tuning lemma); convex and strongly convex rows STATEMENT-FORMALISED (Beck 10.34/10.42/5.25(b) as hypotheses); witness 47 checks, 40 mutations killed",
+  "lean_files": [
+   "OcfVerification/RCPAcceleratedProximal.lean"
+  ],
+  "dossier_sha16": "ae1c503452692b52",
+  "scope_not_formalised": [
+   "NOT FORMALISED (stated honestly): r-cp-pair, r-cp-start (the inequalities for general convex functions), r-cp-ipiano (a)-(c) (the residual assembly I3b and I4 over the cited Lemmas 4.11 to 4.13 is prose), r-cp-fixed, r-cp-refuse (a status statement, now scoped to non-constant g), the pipelines sentence, the rest of r-cp-restrict and r-cp-momentum, the witness-level claims (including the empirical schedule divergence of witness K4), the classical cores (Beck 10.34, 10.42, 5.25(b), B-C 16.44, 17.26), the scheme-definition gap (IF-9)."
+  ]
+ },
+ {
+  "unit": "R-ORD",
+  "result": "Order effects on the floor: coincidence criterion for equal floors of scalar-linear words, rotation lemma (invariant law of the rotated word is the push-forward by the moved letter, two orbits of the six orders), no ranking of the two Langevin floors from declared data beyond hL <= sqrt 5 - 1 (sharp pair d = 2, (m, L) = (1, 3), h = 1/2), finite-K displacement bound, reversed-word bound from landed data, conditional quadratic case, refusal table per ordered word",
+  "tier": "FORMALISED partial (coincidence criterion and slice, abstract rotation identity, no-ranking threshold with three exact instances relative to the Gaussian W2 hypothesis, finite-K clause); reversed-word corollary STATEMENT-FORMALISED; witness 16 checks, 74 mutations killed",
+  "lean_files": [
+   "OcfVerification/RORDOrderEffects.lean"
+  ],
+  "dossier_sha16": "9a471d7941d562a7",
+  "scope_not_formalised": [
+   "none listed in the file header"
+  ]
  }
 ]
