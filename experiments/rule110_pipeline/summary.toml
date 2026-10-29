@@ -1,0 +1,65 @@
+# Rule 110 pipeline battery artifact (deterministic; seed 110 where random)
+elapsed_seconds = 21.19
+rule = 110
+
+construction = "three certified stages per automaton step; the declared data vectors and gradient oracles are affine in the data (the declared energy is quadratic in it); products performed by the projective primitive (prox of the convex box); certified read-out (margin 1/2) between stages"
+exhaustive_rows = 8190
+exhaustive_result = "pipeline == reference for every row, lengths 1..12, one iteration per stage at alpha = 1 (IEEE double)"
+
+[trajectory_alpha_1.0]
+n = 256
+steps = 512
+agrees_with_reference = true
+arithmetic = "IEEE double"
+max_iters_per_stage = [1, 1, 1]
+
+[trajectory_alpha_0.4]
+n = 256
+steps = 512
+agrees_with_reference = true
+arithmetic = "IEEE double"
+max_iters_per_stage = [7, 6, 7]
+
+[certificate_audit]
+alpha = 0.4
+rate_q = 0.6
+eps = 0.49
+observed_vs_predicted_P = [7, 7]
+observed_vs_predicted_Q = [6, 6]
+observed_vs_predicted_Y = [7, 7]
+
+[joint_energy_minimiser]
+verified = "exact-arithmetic KKT (Fractions)"
+witness_1 = "n = 1, x = (0): joint minimiser (0,0,0), min E = 1 > 0"
+witness_2 = "n = 5, x = (0,0,1,1,1): p* = (0,1/2,1,1,0), q* = (0,0,0,1,0), y* = (0,1/2,1,0,1), min E = 3/4, max |y*_i - t_i| = 1/2 exactly: the joint minimiser is not the next row, the threshold-1/2 read-out has margin 0 there and cannot be issued, and the threshold-1/4 read-out is issued from a residual certificate (see single_energy_readout)"
+cascade_not_stationary = "n = 3, x = (0,1,0): exact block-p resolve moves p from (0,0,0) to (1/3,1/3,0)"
+sigma_joint = "lambda_min of [[3,0,1],[0,2,1],[1,1,1]], the smallest root of l^3 - 6 l^2 + 9 l - 1 (approx 0.120615)"
+
+[single_energy_readout]
+declaration = "one smooth term (the summed energy's quadratic), declared pair beta_hat = 18/5, sigma_hat = 3/25; prox = clamp on p and q, identity on y; forward-backward at alpha = 5/18 from z0 = 0; accepted when ||R_alpha||^2 < (sigma_hat/4)^2; y-block read at threshold 1/4, ties up"
+exhaustive_rows = 8190
+exhaustive_result = "read-out == reference for every row, lengths 1..12 (IEEE double)"
+exhaustive_worst_count = 69
+bound_from_declared_n12 = 185
+exact_rational_rows = 510
+exact_rational_result = "read-out == reference, soundness and contraction checked exactly, lengths 1..8 (Fractions)"
+exact_rational_worst_count = 63
+soundness_violations = 0
+contraction_violations = 0
+[single_energy_readout.trajectory]
+n = 256
+steps = 512
+agrees_with_reference = true
+arithmetic = "IEEE double"
+worst_count = 108
+bound_from_declared_n256 = 231
+[single_energy_readout.minimiser_table]
+verified = "exact KKT on the ring of 8 realising all six cell types, x = (0,0,1,1,1,0,1,0)"
+y_values = "0, 1/2, 1"
+min_margin_threshold_quarter = "1/4"
+min_margin_threshold_half = "0"
+[single_energy_readout.negative_controls]
+verified = "exact weighted KKT at each control weighting"
+unit_weights_threshold_half = "x = (0,0,1,1,1): margin 0 (the tie at the bad cell)"
+weights_1_2_1 = "bad-cell minimiser value 1/3; threshold 1/2 reads 0, the row has 1"
+weights_2_1_1 = "threshold 1/2 margin 1/6; reads the row"
