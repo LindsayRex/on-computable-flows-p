@@ -354,5 +354,17 @@
   "scope_not_formalised": [
    "none listed in the file header"
   ]
+ },
+ {
+  "unit": "R-ROT",
+  "result": "Gibbs certificate of the proximal Langevin word transferred to the two cyclic shifts D∘P∘N and N∘D∘P of the certified order P∘N∘D by the landed rotation lemma: gradient-letter displacement of the Gibbs law Υ_D = h(L sqrt(Td/m) + M_g) via lem:r-sp-hmom and the Fermat-plus-sum rule at the minimiser (Euclidean norm), word displacement Υ_ND = sqrt(Υ_D² + Υ_N²), floors (1 − mh) sqrt(B_*) + Υ, K-step bound through the own law and count from declared data; the opposite class (N∘P∘D, P∘D∘N, D∘N∘P) refused: Salim-Kovalev-Richtarik 2019 Algorithm 1 applies the proximal map last, its W2 bound (Cor. 3) is for the already certified order, the pre-proximal iterate is bounded in KL only (GDR2 item C2)",
+  "tier": "STATEMENT-FORMALISED (conclusions proved on an abstract metric space of laws from eight named law-level hypotheses, point start only; the identification with (P_2, W_2), the displacement lemma and the refusal prose-only); witness 6 instances d = 1, all checks pass; two audits found no violation, floors attained at g = 0, m = L, h = 1/L",
+  "lean_files": [
+   "OcfVerification/RROTRotatedProximalLangevin.lean"
+  ],
+  "dossier_sha16": "d765304879904781",
+  "scope_not_formalised": [
+   "NOT FORMALISED: the identification of M with the laws of finite second moment under W2; the law-level hypotheses `hDlip`, `hNlip`, `hPlip`, `hfix`, `hcert0`, `hDD`, `hDND`, `hr` (landed results and the displacement lemma, all PROSE-ONLY with full assassination in the dossier); the second-moment bound of the Gibbs law behind Υ_D and r_* (the lemma under the author's pending call, `% AUTHOR'S CALL (HMOM)`); the proximal and Fermat facts of convex analysis; the other branch of the start term, D̄_0/(h m), from the landed own-law certificate (it enters only as a hypothesis `dist nu0 (π_ω) ≤ S`); Theorem A (v) evaluability; Part B, the refusal for the three orders dpn, ndp, pnd; the Euclidean-norm convention for M_g; sharpness (the corner g = 0, m = L, h = 1/L is not formalised); any start other than a point mass."
+  ]
  }
 ]
