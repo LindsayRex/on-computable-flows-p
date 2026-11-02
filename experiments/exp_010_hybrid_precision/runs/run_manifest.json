@@ -1,0 +1,68 @@
+{
+ "--calibrate": {
+  "experiment": "exp_010_hybrid_precision",
+  "git_sha": "e7a4b55c3f0d95f0647d47177be4edc811f2800f",
+  "brief_sha256": "b59436c84422eb7e3d61a228750431e56067d0e8a2ed3766fd29e03c9c75103a",
+  "python": "3.11.15",
+  "numpy": "2.4.6",
+  "scipy": "1.17.1",
+  "pywt": "1.8.0",
+  "mpmath": "1.3.0",
+  "seeds": [
+   0,
+   1,
+   2,
+   3
+  ],
+  "K_classify": 160,
+  "K_live": 400,
+  "b72_rerun_cap": 40,
+  "threads": "2",
+  "command": "--calibrate",
+  "at": "2026-11-02 21:06:57"
+ },
+ "--classify": {
+  "experiment": "exp_010_hybrid_precision",
+  "git_sha": "e7a4b55c3f0d95f0647d47177be4edc811f2800f",
+  "brief_sha256": "b59436c84422eb7e3d61a228750431e56067d0e8a2ed3766fd29e03c9c75103a",
+  "python": "3.11.15",
+  "numpy": "2.4.6",
+  "scipy": "1.17.1",
+  "pywt": "1.8.0",
+  "mpmath": "1.3.0",
+  "seeds": [
+   0,
+   1,
+   2,
+   3
+  ],
+  "K_classify": 160,
+  "K_live": 400,
+  "b72_rerun_cap": 40,
+  "threads": "2",
+  "command": "--classify",
+  "at": "2026-11-02 21:12:49"
+ },
+ "--live": {
+  "experiment": "exp_010_hybrid_precision",
+  "git_sha": "e7a4b55c3f0d95f0647d47177be4edc811f2800f",
+  "brief_sha256": "b59436c84422eb7e3d61a228750431e56067d0e8a2ed3766fd29e03c9c75103a",
+  "python": "3.11.15",
+  "numpy": "2.4.6",
+  "scipy": "1.17.1",
+  "pywt": "1.8.0",
+  "mpmath": "1.3.0",
+  "seeds": [
+   0,
+   1,
+   2,
+   3
+  ],
+  "K_classify": 160,
+  "K_live": 400,
+  "b72_rerun_cap": 40,
+  "threads": "2",
+  "command": "--live",
+  "at": "2026-11-02 21:13:09"
+ }
+}

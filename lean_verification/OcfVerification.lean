@@ -34,3 +34,4 @@ import OcfVerification.RSPProximalLangevin
 import OcfVerification.RCPAcceleratedProximal
 import OcfVerification.RORDOrderEffects
 import OcfVerification.RROTRotatedProximalLangevin
+import OcfVerification.B72MarginRule

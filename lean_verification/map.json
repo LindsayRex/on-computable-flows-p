@@ -366,5 +366,17 @@
   "scope_not_formalised": [
    "NOT FORMALISED: the identification of M with the laws of finite second moment under W2; the law-level hypotheses `hDlip`, `hNlip`, `hPlip`, `hfix`, `hcert0`, `hDD`, `hDND`, `hr` (landed results and the displacement lemma, all PROSE-ONLY with full assassination in the dossier); the second-moment bound of the Gibbs law behind Υ_D and r_* (the lemma under the author's pending call, `% AUTHOR'S CALL (HMOM)`); the proximal and Fermat facts of convex analysis; the other branch of the start term, D̄_0/(h m), from the landed own-law certificate (it enters only as a hypothesis `dist nu0 (π_ω) ≤ S`); Theorem A (v) evaluability; Part B, the refusal for the three orders dpn, ndp, pnd; the Euclidean-norm convention for M_g; sharpness (the corner g = 0, m = L, h = 1/L is not formalised); any start other than a point mass."
   ]
+ },
+ {
+  "unit": "B72-SND",
+  "result": "Enclosure of a direct float evaluation of the deblurring energy on stored float data (prop:fl-enclosure: abs(E_hat - E(x)) <= e with e composed from Jeannerod-Rump 2013 Props 3.1 and 4.1 and the one-operation bound, final constant 2u E_hat; the bound computed in binary64 with inflation (1+2^-40), weight 3d+13 <= 8191 so d <= 2726 tight; outward-rounded endpoints; run-time test (T) on the computed numbers) and the certificate of the two-sided margin rule for partial enclosure oracles (prop:margin-rule: (i) A_k <= E(z_k) <= B_k, (ii) B strictly down at every accept, nonincreasing, (iii) a certified reject proves E(z+) > B_k >= E(z_k), (iv) E(z_{k+1}) < B_k and the rise is below the carried width, (v) exclusivity); it does NOT certify E(z_{k+1}) < E(z_k); remark on the three holes of the one-sided design",
+  "tier": "FORMALISED for prop:margin-rule (OCF.B72: inv_step, reach_inv, accept_lt, reject_keeps, reach_B_le, rejectCert_gt, accept_bounds, excl, step_det, non-vacuity instances; oracle soundness is the hypothesis); prop:fl-enclosure PROSE-ONLY (two assassination slices, witnesses 100/100 enclosures, weights 1..2726, millions of toy-format cases, no counterexample); experiment exp_010: invariant 1280/1280, ",
+  "lean_files": [
+   "OcfVerification/B72MarginRule.lean"
+  ],
+  "dossier_sha16": "9b9b1e836a5331b7",
+  "scope_not_formalised": [
+   "NOT COVERED (remain PROSE-ONLY): Proposition 1 (the floating-point enclosure of the direct evaluation, with H-chk, H-bd, H-d, H-NU, H-NO); Lemma A (rounding monotonicity step); Lemma F (weights, cited from Higham–Mary Lemma 2.2); the remark of section 8 (three conditions under which a one-sided rule fails); the cost remark (section 6); the classifier-mode carry of the companion experiment (re-install a fresh enclosure of the rejected proposal and move to it) — NOT formalised under this name, it is a measurement protocol and not the rule (dossier limit 2: it keeps (i), (iii) and the accept-step inequality but breaks the rest of (ii); a second relation would have `inv_step`, `rejectCert_gt`, `accept_lt` and no `reach_B_le`); the variant that accepts only if `b < A_k` (a remark in the dossier, not a theorem); the identification of the oracles with Proposition 1(c), exact rational evaluation or a particular interval library (these are the oracle hypotheses `Sound`)."
+  ]
  }
 ]

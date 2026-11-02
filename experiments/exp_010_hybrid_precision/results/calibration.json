@@ -1,0 +1,21 @@
+{
+ "CAL1_float32_contains_tier2": "200/200",
+ "CAL1_pass": true,
+ "CAL2_mutant_fails_count": 102,
+ "CAL2_pass_watched_failure": true,
+ "CAL3_tier1_contains_tier2": "200/200",
+ "CAL3_tier1_narrower": "200/200",
+ "CAL3_pass": true,
+ "CAL4_exact_in_tier2": true,
+ "CAL4_exact_in_float32": true,
+ "CAL4_pass": true,
+ "CAL5_pass": true,
+ "t_eval32_s": 0.0009107149962801486,
+ "t_eval64_s": 0.0016276274982374161,
+ "t_iv113_s": 0.31485326003166847,
+ "t_b72_rerun_s": 1.0377627834968735,
+ "t_step32_s": 2.2852502297610044e-05,
+ "P6_tier1_over_eval32": 1.7871974271704374,
+ "P6_tier2_over_eval32": 345.7209569598602,
+ "all_pass": true
+}
