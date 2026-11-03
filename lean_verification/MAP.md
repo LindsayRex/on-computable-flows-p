@@ -50,6 +50,13 @@ Do not edit by hand. "Not formalised" quotes each file header: what the Lean sta
 - `OcfVerification/PSpectralGlue.lean`: not formalised: none listed in the file header
 - `OcfVerification/B6Witnesses.lean`: not formalised: NOT COVERED: Lemma 6(c) for general (unequal) weights (Δ_w = ℓ_w(θ)); Lemma 4(a) for EVERY θ ∈ (0, π/4) with tan(θ/2) < r (one explicit θ is constructed); Remark 3.3 (principal-axis angle), Remark 6.7 (discontinuity of λ⁺ at θ = 0), Remark 7.3 (redundant frames), the interpretive remarks.
 
+## PCF: Classical convex-analysis facts the Lean files took as hypotheses, proved (card 22): the proximal characterisation, existence and uniqueness of the proximal point, existence and uniqueness of the minimiser of a strongly convex lsc sum, the ε-subdifferential sum rule; one headline theorem of each of G3, H2, H3, H4 restated without the classical hypothesis
+
+- Status: FORMALISED 2026-11-03 — PConvexFacts.lean (OCF.PCF.prox_char any inner product space; prox_exists_unique, proxChar_proxMap, exists_proxEps_zero, exists_unique_min_add(_gen/_diff) in finite dimension (ProperSpace); discharge corollaries soundness_prox_of_primitive, E4a_of_primitive, cert_iter_of_primitive, H4_7_b_of_primitive) and PEpsSumRule.lean (OCF.P.epsSumRule_of_convex_continuous: any real Hi
+- Dossier hash at formalisation: `not recorded`
+- `OcfVerification/PConvexFacts.lean`: not formalised: NOT FORMALISED: existence of a minimiser of f + g when the total curvature is not positive (B&C Cor. 11.17 under mere coercivity, e.g. H2 (E3), which assumes only f convex and an existing minimiser; the minimiser there is not guaranteed and stays a hypothesis); the other headline theorems of each file (only one per file restated); Fermat/sum rule of H3 T2.
+- `OcfVerification/PEpsSumRule.lean`: not formalised: none listed in the file header
+
 ## A56: Prox and spectral bookkeeping in frame coordinates (re-entry of July U2/X2, restated)
 
 - Status: FORMALISED (partial) 2026-10-09 — A56.2 matrix identities (OCF.A56.pushDown_mul_self, projRan_symm_idem, norm_frame, …), A56.5(a) lift_characterisation, A56.6(a) A56_6a/A56_6a_roots, (b) A56_6b, (d) A56_6d_scale/A56_6d_frame, (e) A56_6e, (f) A56_6f/A56_6f_attained (zero sorry; axioms propext/Classical.choice/Quot.sound, checked by main session; full lake build clean). Prox parts (A56.1, A56.3, A56
